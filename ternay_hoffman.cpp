@@ -95,9 +95,6 @@ Node_3 get_node(Node_3 *N, int m_i, int sec_m_i, int third_m_i)
 }
 void ternay_hoffman(letter *a, int size)
 {
-    // letter a[5] = {{'a', 5}, {'b', 10}, {'c', 2}, {'e', 50}, {'k', 25}};
-    // letter a[7] = {{'a', 32}, {'b', 12}, {'c', 11}, {'d', 15}, {'e', 23}, {'f', 10}, {'g', 7}};
-    // int size = 5;
     Node_3 *N = new Node_3[size * 2];
     for (int i = 0; i < size; i++)
     {

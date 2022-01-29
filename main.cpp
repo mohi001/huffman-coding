@@ -9,17 +9,6 @@ void bin_hoffman(letter *a, int size);
 int main(int argc, char const *argv[])
 {
     using namespace std;
-    // std::cin >> n;
-    // letter a[5] = {{'a', 5}, {'b', 10}, {'c', 2}, {'e', 50}, {'k', 25}};
-    // letter a[7] = {{'a', 32}, {'b', 12}, {'c', 11}, {'d', 15}, {'e', 23}, {'f', 10}, {'g', 7}};
-    letter a[6] = {
-        {'a', 5},
-        {'b', 9},
-        {'c', 12},
-        {'d', 13},
-        {'e', 16},
-        {'f', 45},
-    };
     cout << "welcome\n";
     std::string input;
     int n;
@@ -35,8 +24,6 @@ int main(int argc, char const *argv[])
             std::cout << "bye...";
             break;
         }
-        // cout << "thi" << input << "thi";
-        // getchar();
         int a = std::stoi(input);
         if (std::system("clear"))
         {
