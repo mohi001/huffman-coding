@@ -1,0 +1,5 @@
+out/
+build/
+tmp.cpp
+test.cpp
+.vscode
