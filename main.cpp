@@ -32,6 +32,8 @@ int main(int argc, char const *argv[])
         cout << "enter number of letters\n";
 
         cin >> n;
+        cout << "pleas enter alphabetes and their frequency\n";
+        cout << "e.g: a 10\n";
         i = n;
         letter l[n];
         switch (a)
