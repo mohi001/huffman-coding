@@ -4,8 +4,8 @@ struct letter
     char chr = 0;
     int count = 0;
 };
-void ternay_hoffman(letter *a, int size);
-void bin_hoffman(letter *a, int size);
+void ternay_huffman(letter *a, int size);
+void bin_huffman(letter *a, int size);
 int main(int argc, char const *argv[])
 {
     using namespace std;
@@ -41,14 +41,14 @@ int main(int argc, char const *argv[])
             {
                 cin >> l[i].chr >> l[i].count;
             }
-            bin_hoffman(l,n);
+            bin_huffman(l, n);
             break;
         case 2:
             while (i--)
             {
                 cin >> l[i].chr >> l[i].count;
             }
-            ternay_hoffman(l,n);
+            ternay_huffman(l, n);
             break;
         default:
             std::cout << "\033[1;31minvalid \033[0m\n";
