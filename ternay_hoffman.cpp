@@ -15,7 +15,9 @@ struct Node_3
     {
         if (this->ltr.chr != '0')
             // std::cout << " size: " << level << " | (" << ltr.chr << " ," << ltr.count << ") " << str << "\n";
-            std::cout << "( " << ltr.chr << " ," << ltr.count << " ) " << " | " << " size: " << level << "\n";
+            std::cout << "( " << ltr.chr << " ," << ltr.count << " ) "
+                      << ": "
+                      << level << "\n";
     }
 };
 int min_i(Node_3 *ltrs, int size)
@@ -76,23 +78,6 @@ void visit(Node_3 *root, int level, std::string str)
         visit(root->right, level, str + "2");
     }
 }
-Node_3 get_node(Node_3 *N, int m_i, int sec_m_i, int third_m_i)
-{
-    if (m_i != -1)
-        N[m_i].visited = true;
-    if (sec_m_i != -1)
-        N[sec_m_i].visited = true;
-    if (third_m_i != -1)
-        N[third_m_i].visited = true;
-    return {
-        {'0',
-         (m_i == -1 ? 0 : N[m_i].ltr.count) +
-             (sec_m_i == -1 ? 0 : N[sec_m_i].ltr.count) +
-             (third_m_i == -1 ? 0 : N[third_m_i].ltr.count)},
-        m_i == -1 ? nullptr : &N[m_i],
-        sec_m_i == -1 ? nullptr : &N[sec_m_i],
-        third_m_i == -1 ? nullptr : &N[third_m_i]};
-}
 void ternay_hoffman(letter *a, int size)
 {
     Node_3 *N = new Node_3[size * 2];
@@ -105,13 +90,27 @@ void ternay_hoffman(letter *a, int size)
     int third_m_i;
     Node_3 new_node;
     int j = size;
+    if (!(size % 2))
+    {
+        //add a dummy leaf
+        N[size] = {{'0', 0}};
+        size++;
+    }
+
     while (j > 1)
     {
         m_i = min_i(N, size);
         sec_m_i = sec_min_i(N, m_i, size);
         third_m_i = third_min_i(N, m_i, sec_m_i, size);
-        new_node = get_node(N, m_i, sec_m_i, third_m_i);
+        new_node = {{'0', N[m_i].ltr.count + N[sec_m_i].ltr.count +
+                              N[third_m_i].ltr.count},
+                    &N[m_i],
+                    &N[sec_m_i],
+                    &N[third_m_i]};
         N[size] = new_node;
+        N[m_i].visited = true;
+        N[sec_m_i].visited = true;
+        N[third_m_i].visited = true;
         size++;
         j -= 2;
     }

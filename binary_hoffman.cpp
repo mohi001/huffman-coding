@@ -14,7 +14,9 @@ struct Node
     {
         if (this->ltr.chr != '0')
             // std::cout << " size: " << level << " | (" << ltr.chr << " ," << ltr.count << ") " << str << "\n";
-            std::cout << "( " << ltr.chr << " ," << ltr.count << " ) " << " | " << " size: " << level << "\n";
+            std::cout << "( " << ltr.chr << " ," << ltr.count << " ) "
+                      << ": "
+                      << level << "\n";
     }
 };
 int min_i(Node *ltrs, int size)
