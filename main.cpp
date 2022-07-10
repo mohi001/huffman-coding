@@ -1,11 +1,5 @@
-#include "pch.h"
-struct letter
-{
-    char chr = 0;
-    int count = 0;
-};
-void ternay_huffman(letter *a, int size);
-void bin_huffman(letter *a, int size);
+#include<iostream>
+#include "header.h"
 int main(int argc, char const *argv[])
 {
     using namespace std;

@@ -1,9 +1,5 @@
-#include "pch.h"
-struct letter
-{
-    char chr = 0;
-    int count = 0;
-};
+#include<iostream>
+#include "header.h"
 struct Node
 {
     letter ltr = {'0', 0};

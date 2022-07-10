@@ -1,5 +1,6 @@
 out/
 build/
+.cache/
 tmp.cpp
 test.cpp
 .vscode
